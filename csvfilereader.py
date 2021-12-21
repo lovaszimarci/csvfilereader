@@ -1,14 +1,15 @@
 import csv
+from openpyxl import workbook
 
 #opens the first csv file and add it to a variable as a list 
 
-with open('1.csv', 'r') as file1:
+with open('TestPlan.csv', 'r') as file1:
     lista1 = csv.reader(file1)
     for szam in lista1:
         li1  =  szam
 # opens the second csv file and add it to a variable as a list 
 
-with open('2.csv', 'r') as file2:
+with open('Full.csv', 'r') as file2:
     lista2 = csv.reader(file2) 
     for szam in lista2:
         li2 = szam
@@ -34,10 +35,8 @@ for char in osszeslista:
 
 osszeslista = str(osszeslista)
 
-# add the list to a csv file
-print(osszeslista)
 with open('3.csv', 'w') as file3:
     file3.write(osszeslista)
 
-
+print(li1)
 # the with open form of opening files automatically close the files so there is no data leakage!!
